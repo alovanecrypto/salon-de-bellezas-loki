@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#592e3e">
+  <meta name="description" content="Encuentra tu próximo look en Salón de Belleza Loki. Explora seis formas de uñas y seis estilos de pestañas, compara precios y guarda tu selección.">
+  <title>Loki · Uñas, pestañas y un momento para ti</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Italiana&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#coleccion">Ir al catálogo</a>
+  <div class="announcement"><span aria-hidden="true">✧</span> Un poco de amor propio, mucho estilo <span aria-hidden="true">✧</span></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Loki, volver al inicio"><span class="brand-name">loki<span class="brand-star" aria-hidden="true">✧</span></span><span class="brand-caption">SALÓN DE BELLEZA</span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#coleccion" data-category-link="nails">Uñas</a>
+        <a href="#coleccion" data-category-link="lashes">Pestañas</a>
+        <a href="#experiencia">El universo Loki</a>
+      </nav>
+      <div class="header-actions">
+        <button class="bag-button" id="openCart" aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span>Mi selección</span><span class="bag-count" id="cartCount">0</span></button>
+        <button class="icon-button menu-button" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
+      <a href="#coleccion" data-category-link="nails">Explorar uñas <span>↗</span></a>
+      <a href="#coleccion" data-category-link="lashes">Explorar pestañas <span>↗</span></a>
+      <a href="#experiencia">El universo Loki <span>↗</span></a>
+      <a href="#preguntas">Preguntas frecuentes <span>↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-line"></span> NAILS, LASHES & SELF LOVE</p>
+        <h1 id="heroTitle">El arte de<br>sentirte<br><em>increíble.</em></h1>
+        <p class="hero-description">Uñas que hablan de ti. Miradas que lo dicen todo.<br class="desktop-break"> Encuentra ese detalle que hace tu look muy tuyo.</p>
+        <a class="button button-dark" href="#coleccion">Encuentra tu look <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="hero-footnote"><span class="tiny-star" aria-hidden="true">✧</span><span>Tu estilo. Tu esencia. Tu momento.</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-main-image"><img src="images/redonda.webp" alt="Manicura francesa con puntas blancas y acabado natural" width="720" height="900" fetchpriority="high"><span class="photo-caption">THE LOKI TOUCH</span></div>
+        <div class="hero-inset"><img src="images/hibridas.webp" alt="Detalle de pestañas con volumen y curvatura" width="480" height="400"><span>Una mirada, mil posibilidades.</span></div>
+        <div class="hero-seal" aria-hidden="true"><span>MADE FOR</span><strong>you.</strong><span>THE LOKI WAY</span></div>
+        <span class="art-spark spark-one" aria-hidden="true">✧</span><span class="art-spark spark-two" aria-hidden="true">✧</span>
+      </div>
+      <a class="hero-scroll" href="#coleccion"><span>DESCUBRE TU PRÓXIMO FAVORITO</span><span aria-hidden="true">↓</span></a>
+    </section>
+    <div class="signature-strip" aria-label="Uñas, pestañas, actitud y estilo"><div><span>Uñas con personalidad</span><b aria-hidden="true">✧</b><span>Miradas de impacto</span><b aria-hidden="true">✧</b><span>Un momento para ti</span><b aria-hidden="true">✧</b><span>Muy tú. Muy Loki.</span><b aria-hidden="true">✧</b></div></div>
+    <section class="collection wrap section-space" id="coleccion" aria-labelledby="collectionTitle">
+      <div class="section-heading"><div><p class="eyebrow">ELIGE CÓMO BRILLAR</p><h2 id="collectionTitle">Pequeños detalles.<br><em>Gran actitud.</em></h2></div><p>Del look más natural al más atrevido.<br>Explora, combina y hazlo tuyo.</p></div>
+      <div class="catalog-toolbar">
+        <div class="category-tabs" role="tablist" aria-label="Categoría de estilos">
+          <button id="tab-nails" class="category-tab active" role="tab" aria-selected="true" aria-controls="productPanel" data-category="nails">Uñas <span>06</span></button>
+          <button id="tab-lashes" class="category-tab" role="tab" aria-selected="false" aria-controls="productPanel" tabindex="-1" data-category="lashes">Pestañas <span>06</span></button>
+        </div>
+        <label class="sort-label"><span class="visually-hidden">Ordenar estilos</span><select id="sortProducts" aria-label="Ordenar estilos"><option value="original">Orden original</option><option value="price-low">Menor precio</option><option value="price-high">Mayor precio</option></select><span aria-hidden="true">⌄</span></label>
+      </div>
+      <div class="category-intro"><p id="categoryDescription">Seis formas de llevar tu personalidad hasta las puntas.</p><span id="resultCount">6 estilos</span></div>
+      <div id="productPanel" role="tabpanel" aria-labelledby="tab-nails"><div class="products-grid" id="productsGrid"></div></div>
+      <p class="catalog-note"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> Precios en MXN. Elige tus favoritos y guarda tu selección.</p>
+      <noscript><p>Activa JavaScript para explorar el catálogo y preparar tu selección.</p></noscript>
+    </section>
+    <section class="loki-universe" id="experiencia" aria-labelledby="universeTitle">
+      <div class="wrap universe-grid">
+        <div class="universe-art"><img src="images/inspiracion.webp" alt="Uñas blancas y anillos plateados: inspiración para tu próximo look" loading="lazy" width="736" height="414"><span class="universe-label">BEAUTY IS A FEELING.</span><span class="universe-spark" aria-hidden="true">✧</span></div>
+        <div class="universe-copy"><p class="eyebrow">EL UNIVERSO LOKI</p><h2>No es solo un look.<br>Es cómo te <em>sientes.</em></h2><p>Hay días para lo sutil y días para robar miradas. En Loki, la inspiración empieza contigo: con lo que te gusta, tu personalidad y las ganas de regalarte un momento.</p><div class="universe-values"><div><span>01</span><p>Elige tu forma<small>De redonda a stiletto. Tú marcas el estilo.</small></p></div><div><span>02</span><p>Dale fuerza a tu mirada<small>Del efecto natural al mega volumen.</small></p></div><div><span>03</span><p>Arma tu combinación<small>Guarda tus favoritos en una sola selección.</small></p></div></div><a class="text-link" href="#coleccion">Hagamos match con tu estilo <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section class="faq wrap section-space" id="preguntas" aria-labelledby="faqTitle">
+      <div class="faq-heading"><p class="eyebrow">ANTES DE ELEGIR</p><h2>¿Lo vemos<br><em>más de cerca?</em></h2><p>Unas respuestas para encontrar tu próximo favorito.</p></div>
+      <div class="faq-list">
+        <details><summary>¿Cómo elijo la forma de mis uñas?<span aria-hidden="true">+</span></summary><p>Si buscas un acabado natural y práctico, explora las formas redonda y ovalada. Almendra estiliza visualmente los dedos; cuadrada tiene una punta recta. Para un look más llamativo, prueba coffin o stiletto. Toca cualquier foto del catálogo para verla con más detalle.</p></details>
+        <details><summary>¿Qué estilo de pestañas va conmigo?<span aria-hidden="true">+</span></summary><p>Las clásicas tienen un efecto discreto. Las híbridas combinan definición y volumen. Volumen ruso y mega volumen ofrecen una mirada más intensa. También puedes explorar las opciones temporales de racimo y tira.</p></details>
+        <details><summary>¿Puedo combinar uñas y pestañas?<span aria-hidden="true">+</span></summary><p>¡Claro! Agrega los estilos que te gusten de ambas categorías. En “Mi selección” puedes cambiar cantidades, quitar estilos y consultar el total antes de guardar tu resumen.</p></details>
+        <details><summary>¿Guardar mi selección confirma una cita o un pago?<span aria-hidden="true">+</span></summary><p>No. La página prepara un resumen de tus estilos y tu preferencia de pago. Puedes descargarlo para mostrarlo en el salón. La disponibilidad, la cita y el pago se confirman directamente con Loki; no se realizan cobros en esta página.</p></details>
+      </div>
+    </section>
+    <section class="closing-section"><div class="wrap"><span class="closing-star" aria-hidden="true">✧</span><p class="eyebrow">UN DETALLE PUEDE CAMBIAR TU DÍA</p><h2>Hoy se vale<br><em>elegirte a ti.</em></h2><a class="button button-dark" href="#coleccion">Quiero mi próximo look <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="closing-watermark" aria-hidden="true">loki</span></div></section>
+  </main>
+  <footer><div class="wrap footer-top"><a class="brand" href="#inicio" aria-label="Loki, inicio"><span class="brand-name">loki<span class="brand-star" aria-hidden="true">✧</span></span><span class="brand-caption">SALÓN DE BELLEZA</span></a><p>Tu belleza, a tu manera.</p><a href="#inicio" class="back-to-top">Volver arriba <span aria-hidden="true">↑</span></a></div><div class="wrap footer-bottom"><span>© <span id="year">2026</span> Salón de Belleza Loki</span><span>NAILS · LASHES · SELF LOVE</span></div></footer>
+
+  <dialog id="cartDialog" class="cart-dialog" aria-labelledby="cartTitle">
+    <div class="drawer-heading"><div><p class="eyebrow">TUS PRÓXIMOS FAVORITOS</p><h2 id="cartTitle">Mi selección <span id="drawerCount">(0)</span></h2></div><button class="icon-button" data-close="cartDialog" aria-label="Cerrar selección"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" hidden><div class="total-row"><span>Total estimado</span><strong id="cartTotal">$0</strong></div><p class="muted">MXN · El pago se realiza directamente en el salón.</p><button class="button button-dark full-width" id="prepareSummary">Preparar mi resumen <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="text-button" data-close="cartDialog">Seguir explorando</button></div>
+  </dialog>
+  <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle"><button class="icon-button dialog-close" data-close="detailDialog" aria-label="Cerrar detalle"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><div id="detailContent"></div></dialog>
+  <dialog id="summaryDialog" class="summary-dialog" aria-labelledby="summaryTitle"><div class="drawer-heading"><div><p class="eyebrow">UN LOOK MUY TUYO</p><h2 id="summaryTitle">Tu resumen Loki</h2></div><button class="icon-button" data-close="summaryDialog" aria-label="Cerrar resumen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div><div class="summary-body"><p class="summary-intro">Todo lo que elegiste, en un solo lugar.</p><div id="summaryItems"></div><div class="total-row"><span>Total estimado · MXN</span><strong id="summaryTotal"></strong></div><fieldset class="payment-fieldset"><legend>¿Cómo prefieres pagar en el salón?</legend><div class="payment-options"><label><input type="radio" name="payment" value="efectivo" checked><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg>Efectivo</label><label><input type="radio" name="payment" value="tarjeta"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Tarjeta</label></div></fieldset><p class="summary-notice"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Este resumen no confirma una cita ni un pago. Muéstralo en el salón para consultar disponibilidad y confirmar tus servicios.</span></p><button class="button button-dark full-width" id="downloadSummary"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Descargar mi selección</button><button class="text-button" id="backToCart">Volver a mi selección</button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span id="toastText"></span></div>
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-definitions" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20M6 15h3"/></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M5 9v6M19 9v6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  </defs></svg>
+</body>
+</html>
